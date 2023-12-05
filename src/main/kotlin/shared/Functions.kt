@@ -4,7 +4,7 @@ import java.io.File
 import java.util.regex.Pattern
 
 fun readInput(day: String): List<String> {
-    val path = "src/main/kotlin/$day/input.txt"
+    val path = "src/day5.day5.day5.day5.day5.day5.day5.day5.day5.day5.day5.main/kotlin/$day/input.txt"
     return File(path).readLines()
 }
 
