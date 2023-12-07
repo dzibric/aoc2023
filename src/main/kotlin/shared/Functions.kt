@@ -4,7 +4,7 @@ import java.io.File
 import java.util.regex.Pattern
 
 fun readInput(day: String): List<String> {
-    val path = "src/day5.day5.day5.day5.day5.day5.day5.day5.day5.day5.day5.main/kotlin/$day/input.txt"
+    val path = "src/main/kotlin/$day/input.txt"
     return File(path).readLines()
 }
 
@@ -17,6 +17,24 @@ fun String.extractFirstNumberFromString(): Int {
     }
 
     return null!!
+}
+
+fun List<Any>.findIndexOfElementAfterIndex(element: Any, startIndex: Int): Int {
+    for (index in startIndex + 1..< size) {
+        if (this[index] == element) {
+            return index
+        }
+    }
+    return -1
+}
+
+inline fun <T> List<T>.indexOfFirstAfter(afterIndex: Int, predicate: (T) -> Boolean): Int {
+    for (index in afterIndex + 1..< size) {
+        if (predicate(this[index])) {
+            return index
+        }
+    }
+    return -1
 }
 
 inline fun <T> Iterable<T>.productOf(selector: (T) -> Int): Int {
